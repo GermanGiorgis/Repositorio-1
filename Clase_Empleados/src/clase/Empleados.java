@@ -14,10 +14,10 @@ package clase;
 
 public class Empleados {
 
-    private String DNI="44405109";
-    private String Nombre="Pablo";
-    private String Apellido="Caprese";
-    private String Domicilio="MAipu 1234";
+    private String DNI="34566725";
+    private String Nombre="Sergio";
+    private String Apellido="tOMATE";
+    private String Domicilio="lOMO 1234";
     private String FechNac="1996-05-16";
     private Double SueldBruto=500000.01;
 
@@ -81,9 +81,6 @@ public class Empleados {
         this.SueldBruto = SueldBruto;
     }
 
-    void setFechNac() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
 
