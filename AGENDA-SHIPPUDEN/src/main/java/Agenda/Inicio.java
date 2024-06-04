@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class Inicio extends javax.swing.JPanel {
-    Arraylst Agenda2 = new Arraylist();
+    Arraylist Agenda2 = new Arraylist();
 
     
     public Inicio() {
