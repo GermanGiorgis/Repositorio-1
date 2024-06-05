@@ -55,6 +55,11 @@ public class Registro extends javax.swing.JFrame {
         });
 
         BotonAtras.setText("Atrás");
+        BotonAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAtrasActionPerformed(evt);
+            }
+        });
 
         BotonSalir2.setText("Salir");
         BotonSalir2.addActionListener(new java.awt.event.ActionListener() {
@@ -203,8 +208,15 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonRegistrar2ActionPerformed
 
     private void BotonSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalir2ActionPerformed
-        // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_BotonSalir2ActionPerformed
+
+    private void BotonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAtrasActionPerformed
+        Logear L2 = new Logear();
+        L2.setVisible(true);
+        L2.setLocationRelativeTo(null);
+        L2.setTitle("Aldea");
+    }//GEN-LAST:event_BotonAtrasActionPerformed
 
     
 

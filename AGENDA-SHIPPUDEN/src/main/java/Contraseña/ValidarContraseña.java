@@ -8,12 +8,6 @@ import javax.swing.JOptionPane;
 
 
 public class ValidarContraseña {
-
-    
-    public static void main(String[] args) {
-        Scanner sc =new Scanner (System.in);
-     
-    }
     // Método para validar la contraseña
     public static boolean ValidarContraseña(String contraseña1) {
         // Expresión regular para verificar la contraseña
