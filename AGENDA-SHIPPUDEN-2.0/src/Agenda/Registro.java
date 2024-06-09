@@ -1,11 +1,15 @@
 
 package Agenda;
 
+import Clase.BaseDeDatos;
 import javax.swing.JOptionPane;
 import static Contraseña.ValidarContraseña.ValidarContraseña;
+import java.sql.Connection;
+import java.sql.*;
 
 
 public class Registro extends javax.swing.JFrame {
+    Connection n4 = BaseDeDatos.getConnection();
 
     
     public Registro() {
@@ -193,26 +197,55 @@ public class Registro extends javax.swing.JFrame {
         String u2= Usuario2.getText();
         String p2= Contraseña2.getText();
         String p3= Contraseña22.getText();
-        if (!u2.isEmpty()) {
-            if (!p2.isEmpty()) {
+      
+            if (!u2.isEmpty()&&!p2.isEmpty()&&!p3.isEmpty()) {
                 
                 if (p2.equals(p3)) {
                     if (ValidarContraseña(p2)) {
-                       
+                        String veri = "SELECT COUNT(*)FROM usuarios WHERE Nombre = ?";// Verifica en la bdd si ya hay un usuario con ese nombre
+                        try (PreparedStatement stmt = n4.prepareStatement(veri) ){
+                            stmt.setString(1,u2);
+                            ResultSet rst=stmt.executeQuery();
+                            if (rst.next()&&rst.getInt(1)>0) { // Si el usuario ya existe envia e msj
+                              JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso, coloque otro");
+                                
+                            }else{
+                                String agre="INSERT INTO usuarios (Nombre, Contraseña)VALUES(?,?)";
+                                try (PreparedStatement stmt2 = n4.prepareStatement(agre)){
+                                    stmt2.setString(1,u2);
+                                    stmt2.setString(2,p2);
+                                    int act = stmt2.executeUpdate();// Ejecuta la consulta y obtiene el numero de filas afectadas
+                                    if (act>0) {
+                                        JOptionPane.showMessageDialog(this,"Registro exitodo");
+                                        Inicio ini = new  Inicio();
+                                        ini.setVisible(true);
+                                        ini.setTitle("Inicio Agenda");
+                                        ini.setLocationRelativeTo(null);
+                                        dispose();
+                                        
+                                    }else{
+                                        JOptionPane.showMessageDialog(this, "Registracion mala ");                                        
+                                    }
+                                        
+                                } catch (Exception e) {
+                                     JOptionPane.showMessageDialog(this, "ERROR "+e.getMessage());
+                                    
+                                }
+                            }
+                            
+                        } catch (Exception e) {
+                             JOptionPane.showMessageDialog(this, "Usuario no vefiricado "+e.getMessage());
+                            
+                        }           
                         
-                        JOptionPane.showMessageDialog(null, "CONTRASEÑA VÁLIDA\n ¡REGISTRO EXITOSO!");
-                      
-                        Inicio i = new Inicio();
-                        i.setVisible(true);
-                        dispose();
                     } else {
-                        JOptionPane.showMessageDialog(null, "CONTRASEÑAS DIFERENTES O CAMPO VACÍO");
+                        JOptionPane.showMessageDialog(null, "CONTRASEÑA NO VALIDA");
                     }
-                }
-            }else{JOptionPane.showMessageDialog(null,"DEBE INGREASR UNA CONTRASEÑA");}
+                }else{JOptionPane.showMessageDialog(null,"CONTRASEÑAS DIFERENTES");}
         } else {
-            JOptionPane.showMessageDialog(null, "EL USUARIO NO PUEDE ESTAR VACIO");
+            JOptionPane.showMessageDialog(null, "LOS CAMPOS DEBEN ESTAR LLENOS");
         }
+        
     }//GEN-LAST:event_BotonRegistrar2ActionPerformed
 
     private void BotonSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalir2ActionPerformed
