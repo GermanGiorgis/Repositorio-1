@@ -37,10 +37,16 @@ public class Registro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setBackground(new java.awt.Color(255, 153, 0));
         jLabel1.setFont(new java.awt.Font("Ninja Naruto", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 0));
         jLabel1.setText("REGISTRO");
 
+        jLabel2.setBackground(new java.awt.Color(255, 153, 0));
         jLabel2.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("USUARIO");
 
         Usuario2.addActionListener(new java.awt.event.ActionListener() {
@@ -49,13 +55,19 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setBackground(new java.awt.Color(255, 153, 0));
         jLabel3.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("CONTRASEÑA");
 
+        jLabel4.setBackground(new java.awt.Color(255, 153, 0));
         jLabel4.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
         jLabel4.setText("CONFIRMAR CONTRASEÑA");
 
+        BotonRegistrar2.setBackground(new java.awt.Color(255, 153, 0));
         BotonRegistrar2.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        BotonRegistrar2.setForeground(new java.awt.Color(255, 153, 0));
         BotonRegistrar2.setText("Registrarse");
         BotonRegistrar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,7 +75,9 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        BotonAtras.setBackground(new java.awt.Color(255, 153, 0));
         BotonAtras.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        BotonAtras.setForeground(new java.awt.Color(255, 153, 0));
         BotonAtras.setText("Atrás");
         BotonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +85,9 @@ public class Registro extends javax.swing.JFrame {
             }
         });
 
+        BotonSalir2.setBackground(new java.awt.Color(255, 153, 0));
         BotonSalir2.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
+        BotonSalir2.setForeground(new java.awt.Color(255, 153, 0));
         BotonSalir2.setText("Salir");
         BotonSalir2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,13 +123,10 @@ public class Registro extends javax.swing.JFrame {
                     .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)))
+                    .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -154,7 +167,7 @@ public class Registro extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 347, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -171,8 +184,8 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -257,6 +270,7 @@ public class Registro extends javax.swing.JFrame {
         L2.setVisible(true);
         L2.setLocationRelativeTo(null);
         L2.setTitle("Aldea");
+        dispose();
     }//GEN-LAST:event_BotonAtrasActionPerformed
 
     
