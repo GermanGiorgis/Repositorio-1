@@ -17,7 +17,7 @@ public class BaseDeDatos {
         Connection c=null;
         try {
             c=DriverManager.getConnection(URL,USER,PASSWORD);
-            JOptionPane.showMessageDialog(null, "Conexion exitosa");
+            //JOptionPane.showMessageDialog(null, "Conexion exitosa");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Conexion fallada "+e.getMessage());
             

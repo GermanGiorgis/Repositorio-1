@@ -1,9 +1,9 @@
 
 package Agenda;
 
+import static Agenda.Logear.ValidarContraseña;
 import Clase.BaseDeDatos;
 import javax.swing.JOptionPane;
-import static Contraseña.ValidarContraseña.ValidarContraseña;
 import java.sql.Connection;
 import java.sql.*;
 

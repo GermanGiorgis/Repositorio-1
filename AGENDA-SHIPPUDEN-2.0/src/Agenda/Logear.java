@@ -185,20 +185,24 @@ public class Logear extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario1ActionPerformed
+    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_BotonSalirActionPerformed
 
-    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contraseña1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Contraseña1ActionPerformed
+    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
+
+        Registro R = new Registro ();
+        R.setVisible(true);
+        R.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_BotonRegistrarActionPerformed
 
     private void BotoningresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotoningresarActionPerformed
         USUARIO =  Usuario1.getText();
         PASW = Contraseña1.getText();
         String p = PASW;
         String u = USUARIO;
-         
+
         if (!u.isEmpty()&&!p.isEmpty()) {
             String query = "SELECT*FROM Usuarios WHERE Nombre=? AND Contraseña=?";
             try (PreparedStatement stmt=n.prepareStatement(query)){
@@ -211,35 +215,29 @@ public class Logear extends javax.swing.JFrame {
                     in.setVisible(true);
                     in.setLocationRelativeTo(null);
                     dispose();
-                    
-                }else{ 
+
+                }else{
                     JOptionPane.showMessageDialog(null, "Usuario no encontrado");
                     Registro r = new Registro();
                     r.setVisible(true);
-                    
+
                 }
-                
+
             } catch (Exception e) {
-               
+
             }
         }
     }//GEN-LAST:event_BotoningresarActionPerformed
+
+    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contraseña1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Contraseña1ActionPerformed
+
+    private void Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Usuario1ActionPerformed
                public static String USUARIO;
                public static String PASW;
-
-    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-               dispose();
-    }//GEN-LAST:event_BotonSalirActionPerformed
-
-    private void BotonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrarActionPerformed
-         
-        
-        
-        Registro R = new Registro ();
-             R.setVisible(true);
-             R.setLocationRelativeTo(null);
-             dispose();
-    }//GEN-LAST:event_BotonRegistrarActionPerformed
 //METODO PARA VALIDAR CONTRASEÑA
     public static boolean ValidarContraseña(String contraseña1) {
         //EXPRESION REGULAR PARA VALIDAR CONTRASEÑA

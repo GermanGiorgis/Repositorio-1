@@ -47,6 +47,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -263,6 +264,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+
         tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -320,7 +323,9 @@ public class Inicio extends javax.swing.JFrame {
         if (!n.isEmpty() && !a.isEmpty() && !t.isEmpty() && !d.isEmpty() && !m.isEmpty()) {
             ValidarCorreo vd = new ValidarCorreo();
              if (vd.ValidarMail()) {
+                 
             String query = "INSERT INTO contactos (DNI,Nombre,Apellido,Telefono,Mail)VALUES(?,?,?,?,?)";
+            
             try (PreparedStatement stmt = n4.prepareStatement(query)) {
                 stmt.setString(1, d);
                 stmt.setString(2, n);
@@ -338,11 +343,12 @@ public class Inicio extends javax.swing.JFrame {
                 if (e.getErrorCode() == 1062) {
                     String query2 = "UPDATE contactos SET Nombre=?,Apellido=?,Telefono=?,Mail=? WHERE DNI=?";
                     try (PreparedStatement stmt = n4.prepareStatement(query2)) {
-                        stmt.setString(1, d);
-                        stmt.setString(2, n);
-                        stmt.setString(3, a);
-                        stmt.setString(4, t);
-                        stmt.setString(5, m);
+                        stmt.setString(1, n);
+                        stmt.setString(2, a);
+                        stmt.setString(3, t);
+                        stmt.setString(4, m);
+                        stmt.setString(5, d);
+                        stmt.executeUpdate();
                         int FilasAct = stmt.executeUpdate();
                         if (FilasAct >0) {
                             nomb.setText("");
@@ -378,7 +384,7 @@ public class Inicio extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this,"Rellene todos los campos");
             
         }
-
+    
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telActionPerformed
@@ -402,7 +408,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String d = dni.getText();
+        /*String d = dni.getText();
         nomb.setText("");
         ape.setText("");
         tel.setText("");
@@ -430,7 +436,7 @@ public class Inicio extends javax.swing.JFrame {
         if (n4 != null) {
             Datos dt = new Datos();
             dt.MostrarDatos(n4, tbl);
-        }
+        }*/
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -449,7 +455,6 @@ public class Inicio extends javax.swing.JFrame {
             mail.setText(correo);
 
             jPanel1.setVisible(true);
-            tbl.setEnabled(false);
             btnGuardar.setEnabled(true);
 
         } else {
@@ -464,7 +469,7 @@ public class Inicio extends javax.swing.JFrame {
     public class ValidarCorreo {
 
         public boolean ValidarMail() {
-            Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)(\\.[A-Za-z]{2,3})$");
+            Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
             Matcher mather = pattern.matcher(mail.getText()); // Crea un matcher para la contraseña dada
             return mather.find(); // Devuelve verdadero si la contraseña cumple con la expresión regular
 
