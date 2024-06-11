@@ -33,6 +33,9 @@ public class Registro extends javax.swing.JFrame {
         BotonRegistrar2 = new javax.swing.JButton();
         BotonAtras = new javax.swing.JButton();
         BotonSalir2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +52,9 @@ public class Registro extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 153, 0));
         jLabel2.setText("USUARIO");
 
+        Usuario2.setForeground(new java.awt.Color(102, 102, 102));
+        Usuario2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Usuario2.setCaretColor(new java.awt.Color(102, 102, 102));
         Usuario2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Usuario2ActionPerformed(evt);
@@ -60,102 +66,140 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("CONTRASEÑA");
 
+        Contraseña2.setForeground(new java.awt.Color(102, 102, 102));
+        Contraseña2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Contraseña2.setCaretColor(new java.awt.Color(102, 102, 102));
+
         jLabel4.setBackground(new java.awt.Color(255, 153, 0));
         jLabel4.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 153, 0));
         jLabel4.setText("CONFIRMAR CONTRASEÑA");
 
-        BotonRegistrar2.setBackground(new java.awt.Color(255, 153, 0));
+        Contraseña22.setForeground(new java.awt.Color(102, 102, 102));
+        Contraseña22.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Contraseña22.setCaretColor(new java.awt.Color(102, 102, 102));
+
+        BotonRegistrar2.setBackground(new java.awt.Color(102, 102, 102));
         BotonRegistrar2.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
         BotonRegistrar2.setForeground(new java.awt.Color(255, 153, 0));
         BotonRegistrar2.setText("Registrarse");
+        BotonRegistrar2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonRegistrar2.setBorderPainted(false);
+        BotonRegistrar2.setContentAreaFilled(false);
         BotonRegistrar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrar2ActionPerformed(evt);
             }
         });
 
-        BotonAtras.setBackground(new java.awt.Color(255, 153, 0));
+        BotonAtras.setBackground(new java.awt.Color(102, 102, 102));
         BotonAtras.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
         BotonAtras.setForeground(new java.awt.Color(255, 153, 0));
         BotonAtras.setText("Atrás");
+        BotonAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonAtras.setBorderPainted(false);
+        BotonAtras.setContentAreaFilled(false);
         BotonAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAtrasActionPerformed(evt);
             }
         });
 
-        BotonSalir2.setBackground(new java.awt.Color(255, 153, 0));
+        BotonSalir2.setBackground(new java.awt.Color(102, 102, 102));
         BotonSalir2.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
         BotonSalir2.setForeground(new java.awt.Color(255, 153, 0));
         BotonSalir2.setText("Salir");
+        BotonSalir2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BotonSalir2.setBorderPainted(false);
+        BotonSalir2.setContentAreaFilled(false);
         BotonSalir2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonSalir2ActionPerformed(evt);
             }
         });
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/yahiko-5120x2880-11912 (1).png"))); // NOI18N
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/yahiko-5120x2880-11912 (1).png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(BotonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(84, 84, 84))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(Contraseña22, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap()))))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(BotonRegistrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(BotonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(46, 46, 46)
+                                    .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel4)
+                                            .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(Contraseña22, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(BotonRegistrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Contraseña22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(BotonRegistrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(Usuario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Contraseña2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(Contraseña22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(BotonRegistrar2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonSalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -196,70 +240,11 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Usuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Usuario2ActionPerformed
-
-    private void BotonRegistrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrar2ActionPerformed
-        String u2= Usuario2.getText();
-        String p2= Contraseña2.getText();
-        String p3= Contraseña22.getText();
-      
-            if (!u2.isEmpty()&&!p2.isEmpty()&&!p3.isEmpty()) {
-                
-                if (p2.equals(p3)) {
-                    if (ValidarContraseña(p2)) {
-                        String veri = "SELECT COUNT(*)FROM usuarios WHERE Nombre = ?";// Verifica en la bdd si ya hay un usuario con ese nombre
-                        try (PreparedStatement stmt = n4.prepareStatement(veri) ){
-                            stmt.setString(1,u2);
-                            ResultSet rst=stmt.executeQuery();
-                            if (rst.next()&&rst.getInt(1)>0) { // Si el usuario ya existe envia e msj
-                              JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso, coloque otro");
-                                
-                            }else{
-                                String agre="INSERT INTO usuarios (Nombre, Contraseña)VALUES(?,?)";
-                                try (PreparedStatement stmt2 = n4.prepareStatement(agre)){
-                                    stmt2.setString(1,u2);
-                                    stmt2.setString(2,p2);
-                                    int act = stmt2.executeUpdate();// Ejecuta la consulta y obtiene el numero de filas afectadas
-                                    if (act>0) {
-                                        JOptionPane.showMessageDialog(this,"Registro exitodo");
-                                        Inicio ini = new  Inicio();
-                                        ini.setVisible(true);
-                                        ini.setTitle("Inicio Agenda");
-                                        ini.setLocationRelativeTo(null);
-                                        dispose();
-                                        
-                                    }else{
-                                        JOptionPane.showMessageDialog(this, "Registracion mala ");                                        
-                                    }
-                                        
-                                } catch (Exception e) {
-                                     JOptionPane.showMessageDialog(this, "ERROR "+e.getMessage());
-                                    
-                                }
-                            }
-                            
-                        } catch (Exception e) {
-                             JOptionPane.showMessageDialog(this, "Usuario no vefiricado "+e.getMessage());
-                            
-                        }           
-                        
-                    } else {
-                        JOptionPane.showMessageDialog(null, "CONTRASEÑA NO VALIDA");
-                    }
-                }else{JOptionPane.showMessageDialog(null,"CONTRASEÑAS DIFERENTES");}
-        } else {
-            JOptionPane.showMessageDialog(null, "LOS CAMPOS DEBEN ESTAR LLENOS");
-        }
-        
-    }//GEN-LAST:event_BotonRegistrar2ActionPerformed
 
     private void BotonSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalir2ActionPerformed
         dispose();
@@ -272,6 +257,65 @@ public class Registro extends javax.swing.JFrame {
         L2.setTitle("Aldea");
         dispose();
     }//GEN-LAST:event_BotonAtrasActionPerformed
+
+    private void BotonRegistrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrar2ActionPerformed
+        String u2= Usuario2.getText();
+        String p2= Contraseña2.getText();
+        String p3= Contraseña22.getText();
+
+        if (!u2.isEmpty()&&!p2.isEmpty()&&!p3.isEmpty()) {
+
+            if (p2.equals(p3)) {
+                if (ValidarContraseña(p2)) {
+                    String veri = "SELECT COUNT(*)FROM usuarios WHERE Nombre = ?";// Verifica en la bdd si ya hay un usuario con ese nombre
+                    try (PreparedStatement stmt = n4.prepareStatement(veri) ){
+                        stmt.setString(1,u2);
+                        ResultSet rst=stmt.executeQuery();
+                        if (rst.next()&&rst.getInt(1)>0) { // Si el usuario ya existe envia e msj
+                            JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso, coloque otro");
+
+                        }else{
+                            String agre="INSERT INTO usuarios (Nombre, Contraseña)VALUES(?,?)";
+                            try (PreparedStatement stmt2 = n4.prepareStatement(agre)){
+                                stmt2.setString(1,u2);
+                                stmt2.setString(2,p2);
+                                int act = stmt2.executeUpdate();// Ejecuta la consulta y obtiene el numero de filas afectadas
+                                if (act>0) {
+                                    JOptionPane.showMessageDialog(this,"Registro exitodo");
+                                    Inicio ini = new  Inicio();
+                                    ini.setVisible(true);
+                                    ini.setTitle("Inicio Agenda");
+                                    ini.setLocationRelativeTo(null);
+                                    dispose();
+
+                                }else{
+                                    JOptionPane.showMessageDialog(this, "Registracion mala ");
+                                }
+
+                            } catch (Exception e) {
+                                JOptionPane.showMessageDialog(this, "ERROR "+e.getMessage());
+
+                            }
+                        }
+
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(this, "Usuario no vefiricado "+e.getMessage());
+
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "CONTRASEÑA NO VALIDA");
+                }
+            }else{JOptionPane.showMessageDialog(null,"CONTRASEÑAS DIFERENTES");}
+        } else {
+            JOptionPane.showMessageDialog(null, "LOS CAMPOS DEBEN ESTAR LLENOS");
+        }
+
+    }//GEN-LAST:event_BotonRegistrar2ActionPerformed
+
+    private void Usuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Usuario2ActionPerformed
 
     
 
@@ -286,6 +330,9 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
