@@ -1,22 +1,22 @@
-
 package Agenda;
 
 import static Agenda.Logear.ValidarContraseña;
 import Clase.BaseDeDatos;
+import java.applet.AudioClip;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.*;
 
-
 public class Registro extends javax.swing.JFrame {
+
     Connection n4 = BaseDeDatos.getConnection();
 
-    
     public Registro() {
         initComponents();
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -255,54 +255,59 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonAtrasActionPerformed
 
     private void BotonRegistrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRegistrar2ActionPerformed
-        String u2= Usuario2.getText();
-        String p2= Contraseña2.getText();
-        String p3= Contraseña22.getText();
+        String u2 = Usuario2.getText();
+        String p2 = Contraseña2.getText();
+        String p3 = Contraseña22.getText();
 
-        if (!u2.isEmpty()&&!p2.isEmpty()&&!p3.isEmpty()) {
+        if (!u2.isEmpty() && !p2.isEmpty() && !p3.isEmpty()) {
 
             if (p2.equals(p3)) {
                 if (ValidarContraseña(p2)) {
                     String veri = "SELECT COUNT(*)FROM usuarios WHERE Nombre = ?";// Verifica en la bdd si ya hay un usuario con ese nombre
-                    try (PreparedStatement stmt = n4.prepareStatement(veri) ){
-                        stmt.setString(1,u2);
-                        ResultSet rst=stmt.executeQuery();
-                        if (rst.next()&&rst.getInt(1)>0) { // Si el usuario ya existe envia e msj
+                    try (PreparedStatement stmt = n4.prepareStatement(veri)) {
+                        stmt.setString(1, u2);
+                        ResultSet rst = stmt.executeQuery();
+                        if (rst.next() && rst.getInt(1) > 0) { // Si el usuario ya existe envia e msj
                             JOptionPane.showMessageDialog(null, "El nombre de usuario ya esta en uso, coloque otro");
 
-                        }else{
-                            String agre="INSERT INTO usuarios (Nombre, Contraseña)VALUES(?,?)";
-                            try (PreparedStatement stmt2 = n4.prepareStatement(agre)){
-                                stmt2.setString(1,u2);
-                                stmt2.setString(2,p2);
+                        } else {
+                            String agre = "INSERT INTO usuarios (Nombre, Contraseña)VALUES(?,?)";
+                            try (PreparedStatement stmt2 = n4.prepareStatement(agre)) {
+                                stmt2.setString(1, u2);
+                                stmt2.setString(2, hashpassword(p2));
                                 int act = stmt2.executeUpdate();// Ejecuta la consulta y obtiene el numero de filas afectadas
-                                if (act>0) {
-                                    JOptionPane.showMessageDialog(this,"Registro exitodo");
-                                    Inicio ini = new  Inicio();
+                                if (act > 0) {
+                                    JOptionPane.showMessageDialog(this, "Registro exitodo");
+                                    Inicio ini = new Inicio();
                                     ini.setVisible(true);
                                     ini.setTitle("Inicio Agenda");
                                     ini.setLocationRelativeTo(null);
+                                    AudioClip Sound;
+                                    Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/naruto-trap.wav"));
+                                    Sound.play();
                                     dispose();
 
-                                }else{
+                                } else {
                                     JOptionPane.showMessageDialog(this, "Registracion mala ");
                                 }
 
                             } catch (Exception e) {
-                                JOptionPane.showMessageDialog(this, "ERROR "+e.getMessage());
+                                JOptionPane.showMessageDialog(this, "ERROR " + e.getMessage());
 
                             }
                         }
 
                     } catch (Exception e) {
-                        JOptionPane.showMessageDialog(this, "Usuario no vefiricado "+e.getMessage());
+                        JOptionPane.showMessageDialog(this, "Usuario no vefiricado " + e.getMessage());
 
                     }
 
                 } else {
                     JOptionPane.showMessageDialog(null, "CONTRASEÑA NO VALIDA");
                 }
-            }else{JOptionPane.showMessageDialog(null,"CONTRASEÑAS DIFERENTES");}
+            } else {
+                JOptionPane.showMessageDialog(null, "CONTRASEÑAS DIFERENTES");
+            }
         } else {
             JOptionPane.showMessageDialog(null, "LOS CAMPOS DEBEN ESTAR LLENOS");
         }
@@ -312,8 +317,28 @@ public class Registro extends javax.swing.JFrame {
     private void Usuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Usuario2ActionPerformed
+    private static String hashpassword(String password) {
+        try {
+            MessageDigest h = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = h.digest(password.getBytes());
+            return bytesToHex(encodedHash);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-    
+    private static String bytesToHex(byte[] hash) {
+        StringBuilder hexString = new StringBuilder(2 * hash.length);
+        for (byte b : hash) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAtras;

@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.applet.AudioClip;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 public class Logear extends javax.swing.JFrame {
     Connection n = BaseDeDatos.getConnection(); // Conexion a base de datos
      
@@ -76,11 +78,6 @@ public class Logear extends javax.swing.JFrame {
         Botoningresar.setBorderPainted(false);
         Botoningresar.setContentAreaFilled(false);
         Botoningresar.setDefaultCapable(false);
-        Botoningresar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotoningresarMouseClicked(evt);
-            }
-        });
         Botoningresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotoningresarActionPerformed(evt);
@@ -93,11 +90,6 @@ public class Logear extends javax.swing.JFrame {
         BotonRegistrar.setBorderPainted(false);
         BotonRegistrar.setContentAreaFilled(false);
         BotonRegistrar.setDefaultCapable(false);
-        BotonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonRegistrarMouseClicked(evt);
-            }
-        });
         BotonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonRegistrarActionPerformed(evt);
@@ -123,19 +115,19 @@ public class Logear extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(135, 135, 135))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(88, 88, 88)))
+                .addGap(62, 62, 62))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(Botoningresar)
@@ -154,13 +146,13 @@ public class Logear extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                        .addGap(67, 67, 67)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -205,6 +197,9 @@ public class Logear extends javax.swing.JFrame {
         Registro R = new Registro ();
         R.setVisible(true);
         R.setLocationRelativeTo(null);
+        AudioClip Sound;
+        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/pain-2.wav"));
+        Sound.play();
         dispose();
     }//GEN-LAST:event_BotonRegistrarActionPerformed
 
@@ -218,19 +213,24 @@ public class Logear extends javax.swing.JFrame {
             String query = "SELECT*FROM Usuarios WHERE Nombre=? AND Contraseña=?";
             try (PreparedStatement stmt=n.prepareStatement(query)){
                 stmt.setString(1,u);
-                stmt.setString(2,p);
+                stmt.setString(2,hashpassword(p));
                 ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
                     JOptionPane.showMessageDialog(this,"Bienvenido "+u);
                     Inicio in = new Inicio();
                     in.setVisible(true);
                     in.setLocationRelativeTo(null);
+                    AudioClip Sound;
+                    Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/naruto-trap.wav"));
+                    Sound.play();
                     dispose();
 
                 }else{
                     JOptionPane.showMessageDialog(null, "Usuario no encontrado");
                     Registro r = new Registro();
                     r.setVisible(true);
+                    r.setLocationRelativeTo(null);
+                    dispose();
 
                 }
 
@@ -247,30 +247,39 @@ public class Logear extends javax.swing.JFrame {
     private void Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Usuario1ActionPerformed
-
-    private void BotoningresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotoningresarMouseClicked
-        AudioClip Sound;
-        Sound = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/naruto-trap.wav"));
-        Sound.play();
-    }//GEN-LAST:event_BotoningresarMouseClicked
-
-    private void BotonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistrarMouseClicked
-         AudioClip Sound2;
-        Sound2 = java.applet.Applet.newAudioClip(getClass().getResource("/Sonidos/pain-2.wav"));
-        Sound2.play();
-    }//GEN-LAST:event_BotonRegistrarMouseClicked
                public static String USUARIO;
                public static String PASW;
 //METODO PARA VALIDAR CONTRASEÑA
     public static boolean ValidarContraseña(String contraseña1) {
         //EXPRESION REGULAR PARA VALIDAR CONTRASEÑA
-        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{6,}$";
+        String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#-.,$%^&+=]).{6,}$";
         //COMPILA LA EXPRESION REGULAR EN UN PATRON
         Pattern pattern = Pattern.compile(regex);
         //CREA UN MATCHER PARA LA CONTRASEÑA DADA
          Matcher matcher = pattern.matcher(contraseña1);
          // Devuelve verdadero si la contraseña cumple con la expresión regular
          return matcher.matches();
+    }
+    private static String hashpassword(String password){
+        try {
+            MessageDigest h = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = h.digest(password.getBytes());
+            return bytesToHex(encodedHash);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+       private static String bytesToHex(byte[] hash) {
+        StringBuilder hexString = new StringBuilder(2 * hash.length);
+        for (byte b : hash) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
     }
 
     
