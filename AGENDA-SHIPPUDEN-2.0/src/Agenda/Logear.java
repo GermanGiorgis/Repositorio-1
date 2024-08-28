@@ -30,11 +30,11 @@ public class Logear extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Usuario1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        Contraseña1 = new javax.swing.JTextField();
         Botoningresar = new javax.swing.JButton();
         BotonRegistrar = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        Contraseña1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -61,14 +61,6 @@ public class Logear extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Ninja Naruto", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("Contraseña");
-
-        Contraseña1.setBackground(new java.awt.Color(102, 102, 102));
-        Contraseña1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Contraseña1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Contraseña1ActionPerformed(evt);
-            }
-        });
 
         Botoningresar.setBackground(new java.awt.Color(255, 255, 255));
         Botoningresar.setFont(new java.awt.Font("Ninja Naruto", 0, 14)); // NOI18N
@@ -110,24 +102,27 @@ public class Logear extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/narutovsssasukegrandef (1).jpg"))); // NOI18N
 
+        Contraseña1.setBackground(new java.awt.Color(102, 102, 102));
+        Contraseña1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(150, 150, 150))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(88, 88, 88)))
-                .addGap(62, 62, 62))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(Botoningresar)
@@ -156,9 +151,9 @@ public class Logear extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Usuario1)
-                    .addComponent(Contraseña1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Usuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Contraseña1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -240,10 +235,6 @@ public class Logear extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BotoningresarActionPerformed
 
-    private void Contraseña1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Contraseña1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Contraseña1ActionPerformed
-
     private void Usuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Usuario1ActionPerformed
@@ -288,7 +279,7 @@ public class Logear extends javax.swing.JFrame {
     private javax.swing.JButton BotonRegistrar;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JButton Botoningresar;
-    private javax.swing.JTextField Contraseña1;
+    private javax.swing.JPasswordField Contraseña1;
     private javax.swing.JTextField Usuario1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
