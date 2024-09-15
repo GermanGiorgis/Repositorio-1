@@ -51,6 +51,7 @@ public class Logear extends javax.swing.JFrame {
         jLabel2.setText(" usuario");
 
         Usuario1.setBackground(new java.awt.Color(102, 102, 102));
+        Usuario1.setForeground(new java.awt.Color(255, 255, 255));
         Usuario1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Usuario1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +104,7 @@ public class Logear extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/narutovsssasukegrandef (1).jpg"))); // NOI18N
 
         Contraseña1.setBackground(new java.awt.Color(102, 102, 102));
+        Contraseña1.setForeground(new java.awt.Color(255, 255, 255));
         Contraseña1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
